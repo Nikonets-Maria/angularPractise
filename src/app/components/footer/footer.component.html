@@ -3,7 +3,7 @@
     <h4>More recipies</h4>
     <ol class="footer_scroll">
         @for (recipe of recepiServise.recepList; track recipe.id) {
-            <div class="footer_elem">
+            <div class="footer_elem" [routerLink]="`/recipe/${recipe.id}`">
                 <img [src]="recipe.image" class="footer_recipe_img"/>
                 <div>
                     <h6>{{recipe.name}}</h6>
@@ -15,6 +15,8 @@
         
     </ol>
 </div>
+
+
 
 <style>
     /* .footer_content{

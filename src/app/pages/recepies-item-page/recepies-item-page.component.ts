@@ -33,10 +33,6 @@ export class RecepiesItemPageComponent {
         },
         error: (error) => {
           this.router.navigate([''])
-
-          // Методы для вперед/назад
-          // this.location.forward()
-          // this.location.back()
         }
       })
 
