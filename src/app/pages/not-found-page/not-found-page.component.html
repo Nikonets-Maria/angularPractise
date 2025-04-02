@@ -1,6 +1,27 @@
 
 
-<div>
+<div class="nfp_content">
     <h1>This page does not exist</h1>
-    <img alt="not found image" src="assets/images/not-found-page-gif.gif"/>
+    <!-- <img alt="not found image" src="assets/images/not-found-page-gif.gif"/> -->
+    <button class="return_btn" [routerLink]="`/`" >Return to home page</button>
+
 </div>
+
+<style>
+
+.nfp_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.return_btn{
+    width: 124px;
+    height: 35px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: #408EBA;
+}
+</style>

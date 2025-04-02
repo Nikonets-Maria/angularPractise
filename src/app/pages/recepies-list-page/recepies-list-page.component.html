@@ -1,29 +1,30 @@
 
 <div class="recepies_list_content">
 
-        <ul class="complexity_navigathion">
-            <li>
-                <a [routerLink]="" routerLinkActive="active" class="complexity_elem">All</a>
-            </li>
-            <li>
-                <a [routerLink]="" routerLinkActive="active" class="complexity_elem">Easy</a>
-            </li>
-            <li>
-                <a [routerLink]="" routerLinkActive="active" class="complexity_elem">Mediun</a>
-            </li>
-        </ul>
+    <ul class="complexity_navigathion">
+        <li>
+            <a [routerLink]="['/breakfast', 'all']" routerLinkActive="active" class="complexity_elem">All</a>
+        </li>
+        <li>
+            <a [routerLink]="['/breakfast', 'easy']" routerLinkActive="active" class="complexity_elem">Easy</a>
+        </li>
+        <li>
+            <a [routerLink]="['/breakfast', 'medium']" routerLinkActive="active" class="complexity_elem">Medium</a>
+        </li>
+    </ul>
+    
 
 
     <div class="main_recipe_list_content">
         <ul class="meal_navigathion">
             <li>
-                <a [routerLink]="" routerLinkActive="active" class="meal_link">Breakfast</a>
+                <a [routerLink]="" routerLinkActive="active" class="meal_link" [routerLink]="`/breakfast/all`">Breakfast</a>
             </li>
             <li>
-                <a [routerLink]="" routerLinkActive="active" class="meal_link">Lunch</a>
+                <a [routerLink]="" routerLinkActive="active" class="meal_link" [routerLink]="`/lunch/all`">Lunch</a>
             </li>
             <li>
-                <a [routerLink]="" routerLinkActive="active" class="meal_link">Dinner</a>
+                <a [routerLink]="" routerLinkActive="active" class="meal_link" [routerLink]="`/dinner/all`">Dinner</a>
             </li>
         </ul>
 
@@ -36,13 +37,32 @@
     
                         <div>
                             <h4>Ingredients</h4>
-                            <div class="ingredient_item">item</div>
+
+                            <div class="ingredient_item">
+                                <h4>{{recipe.ingredients}}</h4>
+
+                            </div>
                         </div>
     
                         <div>
                             <h4>Information</h4>
                             <div class="information_item">
-                                item
+                                <div>
+                                    <h3>{{recipe.caloriesPerServing}}</h3>
+                                    <p>Calories</p>
+                                </div>
+                                <div>
+                                    <h3>{{recipe.rating}}</h3>
+                                    <p>Rating</p>
+                                </div>
+                                <div>
+                                    <h3>{{recipe.prepTimeMinutes}}</h3>
+                                    <p>Prep time minutes</p>
+                                </div>
+                                <div>
+                                    <h3>{{recipe.cookTimeMinutes}}</h3>
+                                    <p>Cook time minutes</p>
+                                </div>
                             </div>
                             
                         </div>
@@ -126,7 +146,7 @@
 
     .recipe_elem{
         width: 623px;
-        height: 469px;
+        min-height: 469px;
         margin: 40px;
         margin-right: 150px;
         padding: 10px;
