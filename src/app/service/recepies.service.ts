@@ -23,4 +23,12 @@ export class RecepiesService {
   public getRecipeById(id: number | string): Observable<RecepItemResponse> {
     return this.httpClient.get<RecepItemResponse>(this.baseUrl + `/recipes/${id}`);
   }
+
+  public getRecipeByComplexity(id: number | string): Observable<RecepItemResponse> {
+    return this.httpClient.get<RecepItemResponse>(this.baseUrl + `/recipes/${id}`);
+  }
+
+  public getRecipeByMeal(id: number | string): Observable<RecepItemResponse> {
+    return this.httpClient.get<RecepItemResponse>(this.baseUrl + `/recipes/${id}`);
+  }
 }

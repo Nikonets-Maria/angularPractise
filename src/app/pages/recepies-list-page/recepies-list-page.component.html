@@ -1,14 +1,31 @@
 
 <div class="recepies_list_content">
 
-    <div class="complexity_navigathion"> 
-        <p>All</p>
-    </div>
+        <ul class="complexity_navigathion">
+            <li>
+                <a [routerLink]="" routerLinkActive="active" class="complexity_elem">All</a>
+            </li>
+            <li>
+                <a [routerLink]="" routerLinkActive="active" class="complexity_elem">Easy</a>
+            </li>
+            <li>
+                <a [routerLink]="" routerLinkActive="active" class="complexity_elem">Mediun</a>
+            </li>
+        </ul>
 
-    <div>
-        <div class="meal_navigathion">
-            <p>Lunch</p>
-        </div>
+
+    <div class="main_recipe_list_content">
+        <ul class="meal_navigathion">
+            <li>
+                <a [routerLink]="" routerLinkActive="active" class="meal_link">Breakfast</a>
+            </li>
+            <li>
+                <a [routerLink]="" routerLinkActive="active" class="meal_link">Lunch</a>
+            </li>
+            <li>
+                <a [routerLink]="" routerLinkActive="active" class="meal_link">Dinner</a>
+            </li>
+        </ul>
 
         <div class="recipe_item">
             @for (recipe of recepiServise.recepList; track recipe.id) {
@@ -30,7 +47,7 @@
                             
                         </div>
     
-                        <button class="recipe_btn">Recipe</button>
+                        <button class="recipe_btn" [routerLink]="`/recipe/${recipe.id}`" >Recipe</button>
     
                     </div>
 
@@ -44,20 +61,81 @@
 </div>
 
 <style>
-    .recipe_item{
+
+    .complexity_navigathion{
         display: flex;
-        overflow: auto;
+        align-items: center;
+        list-style-type: none;
 
     }
+    .complexity_elem {
+        color: black;
+
+        margin: 15px;
+        padding: 10px;
+    }
+
+    .meal_navigathion {
+    list-style-type: none; 
+
+    }
+
+    .meal_link {
+        display: flex; 
+        writing-mode: vertical-rl; 
+        transform: rotate(180deg); 
+        text-align: center; 
+        margin: 10px; 
+    }
+
+
+    /* .complexity_elem.active {
+        color: purple;
+        text-decoration: underline 
+    } */
+
+    .main_recipe_list_content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .meal_navigathion{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recipe_item {
+    display: flex;
+    overflow-y: scroll; 
+    scrollbar-width: none; 
+    }
+
+    .recipe_btn{
+        width: 124px;
+        height: 23px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background-color: #408EBA;
+    }
+
+    .recipe_item::-webkit-scrollbar {
+        display: none;
+    }
+
     .recipe_elem{
         width: 623px;
         height: 469px;
         margin: 40px;
         margin-right: 150px;
+        padding: 10px;
         border: 7px solid white;
         border-radius: 25px;
 
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .recipe_img{
         width: 320px;
@@ -66,6 +144,6 @@
         border-radius: 25px;
 
         position: relative;
-        left: 40%;
+        left: 35%;
     }
 </style>

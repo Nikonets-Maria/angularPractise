@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RecepiesService } from '../../service/recepies.service';
 import { RecepItemResponse } from '../../service/recipe/recipe.item.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-recepies-item-page',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './recepies-item-page.component.html',
   styleUrl: './recepies-item-page.component.css'
 })
@@ -19,20 +20,19 @@ export class RecepiesItemPageComponent {
     public recepiService: RecepiesService
   ) { }
 
+  public goBack(): void{
+    this.location.back()
+  }
+  
   ngOnInit(): void {
-    const productId = this.route.snapshot.params['id']
-    this.recepiService.getRecipeById(productId)
+    const recipeId = this.route.snapshot.params['id']
+    this.recepiService.getRecipeById(recipeId)
       .subscribe({
-        // случай если запрос успеншо выполнится
         next: (data) => {
           this.recepItem = data
         },
-        // случай если запрос вернет ошибку
         error: (error) => {
-          // что делать если будет ошибка .....
-          // Навигация до домашней страницы
           this.router.navigate([''])
-          alert('error')
 
           // Методы для вперед/назад
           // this.location.forward()

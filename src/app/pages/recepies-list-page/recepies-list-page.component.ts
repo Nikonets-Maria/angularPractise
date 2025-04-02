@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { RecepiesService } from '../../service/recepies.service';
 @Component({
   selector: 'app-recepies-list-page',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './recepies-list-page.component.html',
   styleUrl: './recepies-list-page.component.css'
 })

@@ -5,8 +5,11 @@
         @for (recipe of recepiServise.recepList; track recipe.id) {
             <div class="footer_elem">
                 <img [src]="recipe.image" class="footer_recipe_img"/>
-                <h6>{{recipe.name}}</h6>
-                <p>{{recipe.cookTimeMinutes}} min cooktime</p>
+                <div>
+                    <h6>{{recipe.name}}</h6>
+                    <p>{{recipe.cookTimeMinutes}} min cooktime</p>
+                </div>
+                
             </div>
         }
         
@@ -14,26 +17,44 @@
 </div>
 
 <style>
+    /* .footer_content{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    } */
     .footer_recipe_img{
+        
         width: 80px;
 
         border: 3px solid white;
         border-radius: 25px;
 
         position: relative;
-        bottom: 10%;
+        bottom: 5%;
     }
 
     .footer_elem{
-        width: 165px;
-        height: 130px;
+        width: 185px;
+        height: 150px;
         border: 1px solid white;
         border-radius: 7px;
-    }
+        margin: 5px;
 
-    .footer_scroll{
         display: flex;
-        overflow-x: auto;
+        flex-direction: column;
 
+        font-size: xx-small;
     }
+
+
+    .footer_scroll {
+        display: flex;
+        overflow-x: scroll; 
+        scrollbar-width: none; 
+    }
+
+    .footer_scroll::-webkit-scrollbar {
+        display: none;
+    }
+
 </style>

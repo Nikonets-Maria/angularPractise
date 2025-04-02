@@ -1,16 +1,13 @@
 
     <div>
-        <button class="back_btn">Go back</button>
-
-
+        <button class="back_btn" (click)="goBack()">Go back</button>
         <div class="recipe_item">
             <div>
-                <h3>Recepies name</h3>
+                <h3>{{recepItem.name}}</h3>
 
                 <div class="recipe_info">
 
-                    <img class="recipe_img"/>
-
+                    <img class="recipe_img" [src]="recepItem.image"/>
                     <div>
                         <div>
                             <h4>Instructions</h4>
@@ -34,3 +31,21 @@
         </div>
     </div>
 
+<style>
+        .recipe_img{
+        width: 320px;
+        height: 320px;
+        border: 7px solid white;
+        border-radius: 25px;
+        }
+
+        .back_btn{
+            width: 83px;
+            height: 19px;
+            font-size: 17px;
+            color: #404040;
+
+            border: none;
+            background-color: #F0F7FF;
+        }
+</style>
