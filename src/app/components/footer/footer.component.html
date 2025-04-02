@@ -1,11 +1,39 @@
 
 <div class="footer_content">
     <h4>More recipies</h4>
-    <ol>
-        <div>
-            <img alt="image example"/>
-            <h6>Food name</h6>
-            <p>10 min cooktime</p>
-        </div>
+    <ol class="footer_scroll">
+        @for (recipe of recepiServise.recepList; track recipe.id) {
+            <div class="footer_elem">
+                <img [src]="recipe.image" class="footer_recipe_img"/>
+                <h6>{{recipe.name}}</h6>
+                <p>{{recipe.cookTimeMinutes}} min cooktime</p>
+            </div>
+        }
+        
     </ol>
 </div>
+
+<style>
+    .footer_recipe_img{
+        width: 80px;
+
+        border: 3px solid white;
+        border-radius: 25px;
+
+        position: relative;
+        bottom: 10%;
+    }
+
+    .footer_elem{
+        width: 165px;
+        height: 130px;
+        border: 1px solid white;
+        border-radius: 7px;
+    }
+
+    .footer_scroll{
+        display: flex;
+        overflow-x: auto;
+
+    }
+</style>

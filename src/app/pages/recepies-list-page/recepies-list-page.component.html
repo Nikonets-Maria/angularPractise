@@ -11,30 +11,61 @@
         </div>
 
         <div class="recipe_item">
-            <div>
-                <img class="recipe_img"/>
-
-                <div class="recipe_info">
-                    <h3>Recepies name</h3>
-
-                    <div>
-                        <h4>Ingredients</h4>
-                        <div class="ingredient_item">item</div>
-                    </div>
-
-                    <div>
-                        <h4>Information</h4>
-                        <div class="information_item">
-                            item
+            @for (recipe of recepiServise.recepList; track recipe.id) {
+                <div class="recipe_elem">
+    
+                    <div class="recipe_info">
+                        <h3>{{recipe.name}}</h3>
+    
+                        <div>
+                            <h4>Ingredients</h4>
+                            <div class="ingredient_item">item</div>
                         </div>
+    
+                        <div>
+                            <h4>Information</h4>
+                            <div class="information_item">
+                                item
+                            </div>
+                            
+                        </div>
+    
+                        <button class="recipe_btn">Recipe</button>
+    
                     </div>
 
-                    <button class="recipe_btn">Recipe</button>
+                    <img class="recipe_img" [src]="recipe.image"/>
 
                 </div>
-
-            </div>
+            }
         </div>
     </div>
 
 </div>
+
+<style>
+    .recipe_item{
+        display: flex;
+        overflow: auto;
+
+    }
+    .recipe_elem{
+        width: 623px;
+        height: 469px;
+        margin: 40px;
+        margin-right: 150px;
+        border: 7px solid white;
+        border-radius: 25px;
+
+        display: flex;
+    }
+    .recipe_img{
+        width: 320px;
+        height: 320px;
+        border: 7px solid white;
+        border-radius: 25px;
+
+        position: relative;
+        left: 40%;
+    }
+</style>
