@@ -135,16 +135,24 @@
 
     }
     .complexity_elem {
-        color: black;
+        color: #969696;
+
 
         margin: 15px;
         padding: 10px;
     }
 
+    .complexity_elem.active {
+        color: rgb(0, 0, 0);
+    }
+
     .meal_navigathion {
-    list-style-type: none; 
+        display: flex;
+        flex-direction: column;
+        list-style-type: none; 
 
     }
+    
 
     .meal_link {
         display: flex; 
@@ -152,23 +160,20 @@
         transform: rotate(180deg); 
         text-align: center; 
         margin: 10px; 
+
+        color: #969696;
+
     }
 
+    .meal_link.active{
+        color: rgb(0, 0, 0);
+     }
 
-    /* .complexity_elem.active {
-        color: purple;
-        text-decoration: underline 
-    } */
-
+    
     .main_recipe_list_content{
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .meal_navigathion{
-        display: flex;
-        flex-direction: column;
     }
 
     .recipe_item {
